@@ -74,7 +74,7 @@ const outputDiv = document.getElementById('output');
 
 submitBtn.addEventListener('click', function () {
     const name = nameInput.value.trim();
-    const age = ageInput.value.trim();
+    const age = ageInput.value.trim();  
 
     if (name === '') {
         alert('Please enter your name.');
@@ -138,12 +138,24 @@ resetBtn.addEventListener("click", function () {
 //<--------------- Question 4--------------->
 
 const card = document.getElementsByClassName("card");
-const themeBtn = document.getElementById("themeBtn")
+const themeBtn = document.getElementById("themeBtn");
+const text= document.getElementById("text");
+
+isDark=false;
 
 themeBtn.addEventListener("click", function () {
-    card[3].style.backgroundColor = "black";
-});
+    if(isDark===false){
+        card[3].style.backgroundColor="black";
+        text.style.color="white";
+        isDark=true;
+    }
+    else{
+        card[3].style.backgroundColor="white";
+        text.style.color="black";
+        isDark=false;
+    }
 
+});
 
 
 //<--------------- to do list--------------->
@@ -157,7 +169,6 @@ btn.addEventListener("click", function () {
     item.innerHTML = input.value;
     ul.appendChild(item);
     input.value = "";
-
 
 
 
